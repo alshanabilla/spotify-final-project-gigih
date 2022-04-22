@@ -86,7 +86,6 @@ function CreatePlaylist ({ userId, uriTracks }) {
                         id="title"
                         name="title" 
                         variant="outlined"
-                        // value={form.title} 
                         defaultValue={form.title}
                         onChange={handleChange}
                         required
@@ -95,8 +94,8 @@ function CreatePlaylist ({ userId, uriTracks }) {
                         minRows={5}  
                         label="Description"
                         placeholder="Description of playlist"
-                        // value={form.description}
                         defaultValue={form.description}
+                        variant="outlined"
                         id="description"
                         name="description"
                         onChange={handleChange}
