@@ -47,7 +47,7 @@ function Home() {
     const state = Date.now().toString();
     const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 
-    return `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=https://spotify-final-project-gigih-n856smy4s-alshanabilla.vercel.app/&state=${state}&scope=${config.SPOTIFY_SCOPE}`;
+    return `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=http://localhost:3000&state=${state}&scope=${config.SPOTIFY_SCOPE}`;
   }
 
   const onSuccessSearch = (searchTracks) => {
