@@ -1,0 +1,21 @@
+.form-search {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.form-search__input {
+  flex: 1 1 100%;
+  padding: 12px 8px;
+  
+}
+
+.form-search__button {
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.form-search__input, .form-search__button {
+  border-radius: 5px;
+  border: 1px solid rgb(153, 153, 153);
+}

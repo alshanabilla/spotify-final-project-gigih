@@ -1,0 +1,54 @@
+.playlist-card {
+    border: 1px solid #EEEEEE;
+    border-radius: var(--rounded-card);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease-in-out;
+    display: flex;
+    width: 38%;
+}
+
+.playlist-card_image {
+    width: 25%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.playlist-card_image > img {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.playlist-card_data {
+    padding: 8px;
+    font-size: .875rem;
+    width: 55%;
+    overflow: hidden;
+}
+
+.playlist-card_content {
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    flex-shrink: 1;
+    max-width: 72%;
+}
+
+.playlist-card_title {
+    font-size: 1rem;
+    margin-top: 4px;
+}
+
+.playlist-card_artist {
+    margin-top: 4px;
+}
+
+.playlist-card .playlist-card_action {
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+}
