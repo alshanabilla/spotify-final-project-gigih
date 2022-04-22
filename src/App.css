@@ -1,5 +1,6 @@
 .form-search {
   display: flex;
+  justify-content: center;
   gap: 10px;
   margin: 20px 0;
 }
@@ -17,5 +18,4 @@
 
 .form-search__input, .form-search__button {
   border-radius: 5px;
-  border: 1px solid rgb(153, 153, 153);
 }

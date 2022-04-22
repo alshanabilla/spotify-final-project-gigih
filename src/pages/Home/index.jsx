@@ -4,31 +4,32 @@ import SearchBar from '../../components/SearchBar';
 import config from '../../lib/config';
 import CreatePlaylist from '../../components/CreatePlaylist';
 import { getUserProfile } from '../../lib/fetchApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from "../../slice/auth-slice";
 
 function Home() {
-  const [accessToken, setAccessToken] = useState('');
-  const [isAuthorize, setIsAuthorize] = useState(false);
   const [tracks, setTracks] = useState([]);
   const [selectedTracksUri, setSelectedTracksUri] = useState([]);
   const [selectedTracks, setSelectedTracks] = useState([]);
   const [isInSearch, setIsInSearch] = useState(false);
   const [user, setUser] = useState({});
+  const isAuthorize = useSelector((state) => state.auth.isAuthorize);
+  const dispatch = useDispatch();
 
 
   useEffect(() => {
     const accessTokenParams = new URLSearchParams(window.location.hash).get('#access_token');
 
     if (accessTokenParams !== null) {
-      setAccessToken(accessTokenParams);
-      setIsAuthorize(true);
+      dispatch(login(accessTokenParams));
 
       const setUserProfile = async () => {
         try {
           const response = await getUserProfile(accessTokenParams);
 
           setUser(response);
-        } catch (e) {
-          alert(e);
+        } catch (error) {
+          alert(error);
         }
       }
 
@@ -72,22 +73,20 @@ function Home() {
   return (
     <>
       {!isAuthorize && (
-      <div className="container">
+      <div className="center">
           
             <a href={getSpotifyLinkAuthorize()}>Login</a>
             </div>
       )}
 
       {isAuthorize && (
-        <div>
+        <div className="container" id="home">
           <CreatePlaylist
-            accessToken={accessToken}
             userId={user.id}
             uriTracks={selectedTracksUri}
           />
           <hr />
           <SearchBar
-              accessToken={accessToken}
               onSuccess={onSuccessSearch}
           />
         <div className="playlist-content">

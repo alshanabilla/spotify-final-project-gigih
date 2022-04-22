@@ -4,11 +4,11 @@
     overflow: hidden;
     transition: box-shadow 0.2s ease-in-out;
     display: flex;
-    width: 38%;
+    width: 90%;
 }
 
 .playlist-card_image {
-    width: 25%;
+    width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
 }
@@ -29,7 +29,7 @@
 }
 
 .playlist-card_content {
-    height: 45px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     align-items: start;
